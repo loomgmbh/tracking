@@ -1,0 +1,69 @@
+.timeline {
+  border-collapse: collapse;
+  margin: 5em auto;
+  font-size: 9px;
+}
+
+.timeline__block {
+  display: inline-block;
+  height: 24px;
+  width: 24px;
+  text-indent: 200%;
+  overflow: hidden;
+  vertical-align: bottom;
+  margin: 1px;
+}
+
+.timeline__month-start {
+  text-align: left;
+  padding-left: .5em;
+  vertical-align: top;
+}
+
+
+.timeline__week {
+  vertical-align: top;
+  padding-right: .5em;
+}
+
+.timeline__day--first {
+  border-left: 1px solid black;
+  border-top: 1px solid black;
+}
+
+
+@keyframes pulse {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.timeline__day--today {
+  animation: pulse 1s linear 1s infinite alternate;
+}
+
+
+.timeline__day--first-seven,
+.timeline__week--first-seven,
+.timeline__month-start--first-seven {
+  border-top: 1px solid black;
+}
+
+.timeline__day > .timeline__block {
+  background: #ebedf0;
+}
+
+.timeline__day__integrity_1 > .timeline__block{
+  background: #c6e48b;
+}
+
+.timeline__day__integrity_2 > .timeline__block{
+  background: #c6e48b;
+}
+
+.timeline__day__integrity_3 > .timeline__block{
+  background: #7bc96f;
+}
+
+.timeline__day__integrity_4 > .timeline__block{
+  background: #196127;
+}

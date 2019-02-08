@@ -1,0 +1,74 @@
+daily_report:
+  label: Daily Report
+  description: Display tracking information for a single dau
+  libraries:
+    - trekkie/daily_report
+  fields:
+    date:
+      type: string
+      label: Date
+      description: A valid ISO date
+      preview: '2019-04-12'
+    dayname:
+      type: string
+      label: Dayname
+      description: A memorable name for that day
+      preview: Cosmonautics Day
+    flag: 
+      type: string
+      label: Flag
+      description: An emoji flag associated with the day.
+      preview: 🇷🇺
+    emoji: 
+      type: string
+      label: Emoji
+      description: An emoji associated with the day.
+      preview: 👨‍🚀
+    things:
+      type: Array
+      label: Things done
+      description: An activity report
+      preview:
+        - redmine: https://redmine.bi-media.de/
+          ticket: 4622
+          hours: .25
+          comment:
+          activity: Entwicklung 
+        - redmine: https://redmine.bi-media.de/
+          ticket: 234
+          hours: .5
+          comment:
+          activity: Entwicklung 
+        - redmine: https://redmine.bi-media.de/
+          ticket: 7326
+          hours: .75
+          comment:
+          activity: Entwicklung 
+        - redmine: https://redmine.bi-media.de/
+          ticket: 4622
+          hours: .12
+          comment:
+          activity: Entwicklung 
+        - redmine: https://redmine.bi-media.de/
+          ticket: 4653
+          hours: 1.25
+          comment:
+          activity: Entwicklung 
+    hours_expected:
+      type: float
+      label: Expected hours
+      description: How many hours should be tracked today.
+      preview: 8
+    hours_missing:
+      type: float
+      label: Missing hours
+      description: Number of hours not tracked
+      preview: 1.23
+    user:
+      type: string
+      label: User name
+      description: Number of hours not tracked
+      preview: Alexander M.
+    integrity: 93
+
+

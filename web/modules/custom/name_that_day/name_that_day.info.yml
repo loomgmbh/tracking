@@ -1,0 +1,5 @@
+name: 'Name that Day!'
+type: module
+description: 'Finds an appropriate name for any day'
+core: 8.x
+package: 'Custom'

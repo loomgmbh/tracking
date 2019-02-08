@@ -1,0 +1,16 @@
+base:
+  css:
+    component:
+      base.css: {}
+  dependencies:
+    - core/normalize
+
+timeline:
+  css:
+    component:
+      templates/patterns/timeline/timeline.css: {}
+
+daily_report:
+  css:
+    component:
+      templates/patterns/daily_report/daily_report.css: {}

@@ -1,0 +1,42 @@
+<section class="daily-report">
+  <header>
+    <h1 class="daily-report__title">
+      <span class="daily-report__intro">Tracking report for <a href>{{ user }}</a> on</span>
+      <span class="daily-report__dayname">{{ dayname }} {{ emoji }}{{ flag }}</span>
+    </h1>
+    <div class="daily-report__date"><time>{{ date }}</time></div>
+  </header>
+  <table class="daily-report__time-entries">
+    <thead class="daily-report__time-entries-header">
+      <tr>
+        <th>Issue</th>
+        <th>Comment</th>
+        <th>Hours</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for thing in things %}
+        <tr class="daily-report__time-entry">
+          <td>
+            <a href>#{{ thing.ticket }}</a>
+          </td>
+          <td>
+            {{ thing.comment }}
+          </td>
+          <td  class="daily-report__time-entry-hours" style="height: {{ thing.hours * 4 }}em">
+            {{ thing.hours }}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+    {% if hours_missing > 0 %}
+      <tfoot>
+        <tr>
+          <td class="daily-report__time-missing" colspan="3" style="height: {{ hours_missing * 4 }}em">
+            {{ hours_missing }}h of {{ hours_expected }}h not tracked.
+          </td>
+        </tr>
+      </tfoot>
+    {% endif %}
+  </table>
+</section>

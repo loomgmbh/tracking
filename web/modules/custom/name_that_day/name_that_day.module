@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains name_that_day.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function name_that_day_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the name_that_day module.
+    case 'help.page.name_that_day':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Finds an appropriate name for any day') . '</p>';
+      return $output;
+
+    default:
+  }
+}

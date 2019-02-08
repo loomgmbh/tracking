@@ -1,0 +1,73 @@
+{% macro block(i) %}
+  <span class="timeline__block">
+    {%- if i < 20 -%}
+      {{- ' ' -}}
+    {%- elseif i >= 20 and i < 40 -%}
+      ░░░ 
+    {%- elseif i >= 40 and i < 60 -%}
+      ▒▒▒
+    {%- elseif i >= 60 and i < 80 -%}
+      ▓▓▓
+    {%- elseif i >= 80 -%}
+      ███
+    {%- endif -%}
+  </span>
+{%- endmacro %}
+
+{% macro integrity(i) %}
+  {% if i > 20 %}
+    timeline__day__integrity_
+    {%- if i >= 20 and i < 40 -%}
+      1
+    {%- elseif i >= 40 and i < 60 -%}
+      2
+    {%- elseif i >= 60 and i < 80 -%}
+      3
+    {%- elseif i >= 80 -%}
+      4
+    {%- endif -%}
+  {%- endif -%}
+{% endmacro %}
+
+
+
+{% import _self as tl %}
+
+<table class="timeline">
+  <tr>
+      <th><span hidden>Week</span></th>
+      {% for day in calendar.days %}
+        <th>{{ day }}</th>
+      {% endfor %}
+      <th hidden>Month</th>
+   </tr>
+  {% set lastmonth = 0 %}
+  {% set thismonth = 0 %}
+  {% set first_seven = -1 %}
+  {% for wdate, week in weeks %}
+    <tr>
+      <th class="timeline__week {% if first_seven > 0 %}timeline__week--first-seven{% endif %}"><time>{{ wdate|slice(6,2)|trim('0', 'left') }}</time></th>
+      {% set lastday = 0 %}
+      {% for date, day in week %}
+        {% set thismonth = date|slice(5,2)|trim('0', 'left') %}
+        {% set lastday = date|slice(8,2)|trim('0', 'left') %}
+        {% if lastday == 1 %}
+          {% set first_seven = 7 %}
+        {% endif %}
+        <td class="timeline__day {{ tl.integrity(day.integrity) }} {% if lastday == 1 %}timeline__day--first{% elseif first_seven > 0 %}timeline__day--first-seven{% endif %} {% if date == calendar.today %}timeline__day--today{% endif %}" title="{{ date }}">
+          {{ tl.block(day.integrity) }}
+        </td>
+        {% if first_seven > 0 %}
+          {% set first_seven = first_seven - 1 %}
+        {% else %}
+        {% endif %}
+      {% endfor %}
+      {% if lastmonth != thismonth %}
+        <th class="timeline__month-start {% if first_seven >= 0 %}timeline__month-start--first-seven{% endif %}">{{ calendar.months[thismonth] }}</th>
+        {% set lastmonth = thismonth %}
+      {% else %}
+        <th></th>
+      {% endif %}
+   </tr> 
+  {% endfor %}
+</table>

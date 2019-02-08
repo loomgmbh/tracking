@@ -1,0 +1,18 @@
+SELECT ?mord ?dord ?occLabel ?countryLabel ?flag ?subjLabel ?moji WHERE {
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],de". }
+  ?calendar_month wdt:P31 wd:Q47018901.
+  ?day wdt:P361 ?calendar_month.
+  ?day p:P361 [pq:P1545 ?dord].
+  ?calendar_month p:P279 [pq:P1545 ?mord].
+
+  ?occ wdt:P837 ?day.
+ 
+  OPTIONAL {
+    ?occ wdt:P921 ?subj.
+    ?subj wdt:P487 ?moji. 
+  }
+  OPTIONAL { 
+    ?occ wdt:P17 ?country.
+    ?country wdt:P487 ?flag.
+  }
+}
