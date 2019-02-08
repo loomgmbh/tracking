@@ -1,0 +1,20 @@
+uuid: 4a1a1af3-f293-47d1-addc-45fd26dff93b
+langcode: en
+status: true
+dependencies:
+  theme:
+    - trekkie
+_core:
+  default_config_hash: PffmQ-ABSz5tFjWmVsR7NesunDnEivvopnJnBjl8KNE
+id: trekkie_local_actions
+theme: trekkie
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,14 @@
+uuid: 2f9def2a-0c0b-4c31-9a41-51cff67bc59e
+name: Tracking
+mail: a.mueller+tracking@loom.de
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /user/login
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
