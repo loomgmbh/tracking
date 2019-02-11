@@ -1,0 +1,14 @@
+{
+  "name": "drupal/loom_toggl",
+  "type": "drupal-module",
+  "description": "Loom Toggl API module, requires morningtrain/toggl-api https://github.com/Morning-Train/toggl-api",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/loom_toggl",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/loom_toggl",
+    "source": "http://cgit.drupalcode.org/loom_toggl"
+  },
+  "require": { }
+}

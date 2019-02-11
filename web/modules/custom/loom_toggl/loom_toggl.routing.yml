@@ -1,0 +1,8 @@
+
+loom_toggl.tracker_controller_default:
+  path: '/loom_toggl/default'
+  defaults:
+    _controller: '\Drupal\loom_toggl\Controller\TrackerController::output'
+    _title: 'Tracker'
+  requirements:
+    _permission: 'access content'

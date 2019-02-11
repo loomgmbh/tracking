@@ -1,0 +1,5 @@
+name: 'Loom Toggl API'
+type: module
+description: 'Loom Toggl API module, requires morningtrain/toggl-api https://github.com/Morning-Train/toggl-api'
+core: 8.x
+package: 'loom'

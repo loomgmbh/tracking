@@ -1,0 +1,35 @@
+<?php
+
+/**
+ * @file
+ * Contains loom_toggl.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function loom_toggl_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the loom_toggl module.
+    case 'help.page.loom_toggl':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Loom Toggl API module, requires morningtrain/toggl-api https://github.com/Morning-Train/toggl-api') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function loom_toggl_theme() {
+  return [
+    'loom_toggl' => [
+      'render element' => 'children',
+    ],
+  ];
+}

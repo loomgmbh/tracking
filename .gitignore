@@ -22,3 +22,7 @@
 
 # Ignore .env files as they are personal
 /.env
+.vscode
+web/sites/loom-tracker.dd
+web/sites/development.services.yml
+web/sites
